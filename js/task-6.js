@@ -4,19 +4,24 @@ console.log('Задание 1-6!');
 
 let input;
 let total = 0;
+// let stop = true;
 
-while (true) {
-  input = +prompt('Ввести число: ', '');
+// while (stop) {
+while (input !== null) {
+  input = prompt('Ввести число: ', '');
+  const inputNumb = +input;
 
-  if (Number.isNaN(input) === true) {
+  if (Number.isNaN(inputNumb)) {
     alert('Было введено не число, попробуйте еще раз!');
     continue;
   }
 
-  if (!input) {
+  if (input === null) {
     alert(`Общая сумма чисел равна ${total}!`);
     break;
   }
 
-  total += input;
+  total += inputNumb;
 }
+
+// setTimeout(()=>stop = false, 1000);
